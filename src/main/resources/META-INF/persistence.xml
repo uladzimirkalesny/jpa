@@ -1,0 +1,50 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+    <persistence-unit name="jpa-examples" transaction-type="RESOURCE_LOCAL">
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!--        <class>com.uladzimirkalesny.jpa.model.Message</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.Test</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.compositionEx.User</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.mapped_super_class.CreditCard</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.mapped_super_class.BankAccount</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.table_per_class.BillingDetails</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.table_per_class.BankAccount</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.table_per_class.CreditCard</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.single_table.BankAccount</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.single_table.CreditCard</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.joined.BillingDetails</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.joined.CreditCard</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.joined.BankAccount</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.mixed.CreditCard</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.associations.ManyToOne.unidirectional.BankAccount</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.associations.ManyToOne.unidirectional.CreditCard</class>-->
+        <!--        <class>com.uladzimirkalesny.jpa.model.inheritanceEx.associations.ManyToOne.unidirectional.BillingDetails</class>-->
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:h2:mem:jpa-examples;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <!--            Отключение селектотра (@DiscriminatorColumn) для InheritanceType.JOINED-->
+            <!--            <property name="hibernate.discriminator.ignore_explicit_for_joined" value="false"/>-->
+            <!--            validate: проверить схему, не вносить изменения в базу данных.-->
+            <!--            update: обновить схему.-->
+            <!--            create: создает схему, уничтожая предыдущие данные.-->
+            <!--            create-drop: отказаться от схемы, когда SessionFactory закрывается явно, как правило, когда приложение остановлено.-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!--            ставит ковычки вокруг зарезервированных строк во время формирования SQL.-->
+            <property name="hibernate.auto_quote_keyword" value="true"/>
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

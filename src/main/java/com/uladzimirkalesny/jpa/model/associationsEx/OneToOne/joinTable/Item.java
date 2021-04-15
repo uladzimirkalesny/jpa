@@ -1,6 +1,5 @@
-package com.uladzimirkalesny.jpa.model.associationsEx.OneToOne.foreignKey;
+package com.uladzimirkalesny.jpa.model.associationsEx.OneToOne.joinTable;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,20 +18,11 @@ import static com.uladzimirkalesny.jpa.constant.JpaConstants.ID_GENERATOR;
 @Builder
 
 //@Entity
-@Table(name = "ADDRESSES")
-public class Address {
-
+@Table(name = "ITEMS")
+public class Item {
     @Id
     @GeneratedValue(generator = ID_GENERATOR)
     protected Long id;
 
-    @NotNull
-    protected String street;
-
-    @NotNull
-    protected String zipcode;
-
-    @NotNull
-    protected String city;
-
+    protected String name;
 }

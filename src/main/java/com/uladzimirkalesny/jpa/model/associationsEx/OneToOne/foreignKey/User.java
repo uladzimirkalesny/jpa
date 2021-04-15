@@ -21,7 +21,7 @@ import static com.uladzimirkalesny.jpa.constant.JpaConstants.ID_GENERATOR;
 @AllArgsConstructor
 @Builder
 
-@Entity
+//@Entity
 @Table(name = "USERS")
 public class User {
 

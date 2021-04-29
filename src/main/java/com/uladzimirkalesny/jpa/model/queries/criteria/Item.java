@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Builder
 
-@Entity
+//@Entity
 @Table(name = "ITEMS")
 public class Item {
 

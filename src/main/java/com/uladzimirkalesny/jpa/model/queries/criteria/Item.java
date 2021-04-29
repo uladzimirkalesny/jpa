@@ -1,5 +1,6 @@
-package com.uladzimirkalesny.jpa.model.proxiesEx.eagerloading;
+package com.uladzimirkalesny.jpa.model.queries.criteria;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -7,24 +8,24 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import static com.uladzimirkalesny.jpa.constant.JpaConstants.ID_GENERATOR;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 
-//@Entity
-@Table(name = "USERS")
-public class User {
+@Entity
+@Table(name = "ITEMS")
+public class Item {
 
     @Id
-    @GeneratedValue(generator = ID_GENERATOR)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @NotNull
+    private String title;
 
 }
